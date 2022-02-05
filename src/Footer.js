@@ -6,26 +6,32 @@ export default function Footer() {
 		<div className="Footer">
 			<p>
 				Coded by{" "}
-				<a
-					href="https://www.linkedin.com/in/jenna-wamsley-a33a384b/"
-					target="_blank"
-				>
+				<a href="https://jennawamsley.com/" target="_blank" rel="noreferrer">
 					Jenna Wamsley
 				</a>{" "}
 				(inspired by{" "}
-				<a href="https://www.weather.shecodes.io/" target="_blank">
+				<a
+					href="https://www.weather.shecodes.io/"
+					target="_blank"
+					rel="noreferrer"
+				>
 					SheCodes Weather App
 				</a>
 				).
 				<br />
 				<a
-					href="https://github.com/jwam-create/my-vanilla-weather-app"
+					href="https://github.com/jwam-create/weather-app-react-v2"
 					target="_blank"
+					rel="noreferrer"
 				>
 					Open-sourced on GitHub
 				</a>{" "}
 				and{" "}
-				<a href="https://upbeat-boyd-45c7a3.netlify.app/" target="_blank">
+				<a
+					href="https://upbeat-boyd-45c7a3.netlify.app/"
+					target="_blank"
+					rel="noreferrer"
+				>
 					hosted on Netlify
 				</a>
 				.
