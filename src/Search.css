@@ -1,0 +1,27 @@
+.Search .search-input {
+	background: #f9f7fe;
+	border: none;
+	padding: 15px 20px;
+	display: inline-block;
+	border-radius: 6px;
+	color: rgba(39, 33, 66, 0.4);
+	font-size: 16px;
+	height: 50px;
+	line-height: 20px;
+}
+
+.Search form {
+	margin-top: 30px;
+	border-bottom: 1px solid #f9f7fe;
+	padding-bottom: 30px;
+}
+
+.Search .btn {
+	background: #885df1;
+	font-weight: 700;
+	font-size: 16px;
+	padding: 15px 0;
+	border: none;
+	height: 50px;
+	display: inline-block;
+}
