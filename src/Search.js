@@ -1,6 +1,7 @@
-import axios from "axios";
 import React, { useState } from "react";
+import axios from "axios";
 
+import Test from "./Test";
 import "./Search.css";
 
 export default function Search() {
@@ -12,6 +13,13 @@ export default function Search() {
 		let list = (
 			<div className="row">
 				<div className="col-6 city-container">
+					<Test
+						city={city}
+						description={response.data.weather[0].main}
+						humidity={response.data.main.humidity}
+						wind={Math.round(response.data.wind.speed)}
+						timestamp={response.data.dt}
+					/>
 					<h1 id="city">{city}</h1>
 					<ul>
 						<li>
