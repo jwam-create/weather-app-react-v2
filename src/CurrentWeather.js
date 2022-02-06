@@ -3,7 +3,6 @@ import React from "react";
 import "./CurrentWeather.css";
 
 export default function CurrentWeather(props) {
-	console.log(props.city);
 	return (
 		<div className="CurrentWeather">
 			<div className="row">

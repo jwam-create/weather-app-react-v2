@@ -7,9 +7,10 @@ import "./Search.css";
 export default function Search() {
 	const [city, setCity] = useState("Paris");
 	const [currentWeather, setCurrentWeather] = useState(null);
+	const [forecast, setForecast] = useState(null);
 
 	function displayWeather(response) {
-		let input = (
+		let currentWeather = (
 			<CurrentWeather
 				city={city}
 				description={response.data.weather[0].main}
@@ -19,7 +20,7 @@ export default function Search() {
 				temperature={Math.round(response.data.main.temp)}
 			/>
 		);
-		setCurrentWeather(input);
+		setCurrentWeather(currentWeather);
 	}
 
 	function handleSubmit(event) {
@@ -58,6 +59,7 @@ export default function Search() {
 				</div>
 			</form>
 			{currentWeather}
+			{forecast}
 		</div>
 	);
 }
