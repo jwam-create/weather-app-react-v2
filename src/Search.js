@@ -6,17 +6,20 @@ import "./Search.css";
 
 export default function Search() {
 	const [city, setCity] = useState("Paris");
-	//const [todaysWeather, setTodaysWeather] = useState(null);
+	const [currentWeather, setCurrentWeather] = useState(null);
 
 	function displayWeather(response) {
-		<CurrentWeather
-			city={city}
-			description={response.data.weather[0].main}
-			humidity={response.data.main.humidity}
-			wind={Math.round(response.data.wind.speed)}
-			timestamp={response.data.dt}
-			temperature={Math.round(response.data.main.temp)}
-		/>;
+		let input = (
+			<CurrentWeather
+				city={city}
+				description={response.data.weather[0].main}
+				humidity={response.data.main.humidity}
+				wind={Math.round(response.data.wind.speed)}
+				timestamp={response.data.dt}
+				temperature={Math.round(response.data.main.temp)}
+			/>
+		);
+		setCurrentWeather(input);
 	}
 
 	function handleSubmit(event) {
@@ -54,7 +57,7 @@ export default function Search() {
 					</div>
 				</div>
 			</form>
-			<CurrentWeather />
+			{currentWeather}
 		</div>
 	);
 }
