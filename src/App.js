@@ -11,8 +11,8 @@ import "./Footer.css";
 export default function App() {
 	return (
 		<div className="App">
-			<div className="Container weather-app">
-				<Search />
+			<div className="container weather-app">
+				<Search defaultCity="Paris" />
 				<Forecast />
 				<Footer />
 			</div>
