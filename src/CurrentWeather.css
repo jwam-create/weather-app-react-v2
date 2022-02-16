@@ -33,11 +33,6 @@
 	opacity: 0.8;
 }
 
-.CurrentWeather #icon {
-	display: block;
-	margin: 0;
-	height: 80px;
-}
 .CurrentWeather .temperature {
 	color: #212121;
 	margin-left: 10px;

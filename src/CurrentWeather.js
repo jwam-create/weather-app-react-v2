@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import WeatherIcon from "./WeatherIcon";
 
 import "./CurrentWeather.css";
 import FormattedDate from "./FormattedDate";
@@ -31,7 +32,10 @@ export default function CurrentWeather(props) {
 				</div>
 				<div className="col">
 					<div className="temperature-container d-flex justify-content-end">
-						<img src={props.data.iconUrl} alt="" id="icon" />
+						<div className="float-left">
+							<WeatherIcon code={props.data.icon} />
+						</div>
+
 						<div>
 							<span className="temperature" id="temperature">
 								{Math.round(props.data.temperature)}

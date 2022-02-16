@@ -9,15 +9,14 @@ export default function Search(props) {
 	const [weatherData, setWeatherData] = useState({ ready: false });
 
 	function handleResponse(response) {
-		console.log(response.data);
+		console.log(response.data.weather[0].icon);
 		setWeatherData({
 			city: response.data.name,
 			temperature: Math.round(response.data.main.temp),
 			description: response.data.weather[0].main,
 			humidity: response.data.main.humidity,
 			wind: Math.round(response.data.wind.speed),
-			iconUrl:
-				"https://www.pngkey.com/png/full/908-9081651_sun-icon-weather-report-sun.png",
+			icon: response.data.weather[0].icon,
 			date: new Date(response.data.dt * 1000),
 			ready: true,
 		});
