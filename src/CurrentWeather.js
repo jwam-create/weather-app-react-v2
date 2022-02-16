@@ -1,24 +1,9 @@
 import React, { useState } from "react";
 
 import "./CurrentWeather.css";
+import FormattedDate from "./FormattedDate";
 
 export default function CurrentWeather(props) {
-	//const [isActive, setIsActive] = useState("false")
-	const [celsiusTemperature, setCelsiusTemperature] = useState(
-		props.data.temperature
-	);
-	const [fahrenheitTemperature, setFahrenheitTemperature] = useState(null);
-
-	function displayFahrenheit(event) {
-		event.preventDefault();
-		setFahrenheitTemperature(Math.round(celsiusTemperature * (9 / 5) + 32));
-	}
-
-	function displayCelsius(event) {
-		event.preventDefault();
-		setCelsiusTemperature(props.data.temperature);
-	}
-
 	return (
 		<div className="CurrentWeather">
 			<div className="row">
@@ -40,7 +25,7 @@ export default function CurrentWeather(props) {
 							</strong>
 						</li>
 						<li className="last-updated">
-							Last updated: <span id="date">props.data.date</span>
+							Last updated: <FormattedDate date={props.data.date} />
 						</li>
 					</ul>
 				</div>
@@ -58,15 +43,11 @@ export default function CurrentWeather(props) {
 							</span>
 							<span className="units">
 								{" "}
-								<a className="celsiusLink" href="#" onClick={displayCelsius}>
+								<a className="celsiusLink" href="#">
 									°C
 								</a>{" "}
 								|{" "}
-								<a
-									className="fahrenheitLink activeLink"
-									href="#"
-									onClick={displayFahrenheit}
-								>
+								<a className="fahrenheitLink activeLink" href="#">
 									°F
 								</a>
 							</span>

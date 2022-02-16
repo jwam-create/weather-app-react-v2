@@ -7,7 +7,6 @@ import "./Search.css";
 export default function Search(props) {
 	const [city, setCity] = useState(props.defaultCity);
 	const [weatherData, setWeatherData] = useState({ ready: false });
-	//const [forecast, setForecast] = useState(null);
 
 	function handleResponse(response) {
 		setWeatherData({
@@ -17,7 +16,7 @@ export default function Search(props) {
 			humidity: response.data.main.humidity,
 			wind: Math.round(response.data.wind.speed),
 			iconUrl: "https://ssl.gstatic.com/onebox/weather/64/sunny.png",
-			date: "Saturday 16:30",
+			date: new Date(response.data.dt * 1000),
 			ready: true,
 		});
 	}
