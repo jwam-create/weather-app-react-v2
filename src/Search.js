@@ -16,7 +16,8 @@ export default function Search(props) {
 			description: response.data.weather[0].main,
 			humidity: response.data.main.humidity,
 			wind: Math.round(response.data.wind.speed),
-			iconUrl: "https://ssl.gstatic.com/onebox/weather/64/sunny.png",
+			iconUrl:
+				"https://www.pngkey.com/png/full/908-9081651_sun-icon-weather-report-sun.png",
 			date: new Date(response.data.dt * 1000),
 			ready: true,
 		});

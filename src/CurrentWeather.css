@@ -36,8 +36,7 @@
 .CurrentWeather #icon {
 	display: block;
 	margin: 0;
-	max-width: 100%;
-	height: auto;
+	height: 80px;
 }
 .CurrentWeather .temperature {
 	color: #212121;

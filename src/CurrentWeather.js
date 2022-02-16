@@ -31,12 +31,7 @@ export default function CurrentWeather(props) {
 				</div>
 				<div className="col">
 					<div className="temperature-container d-flex justify-content-end">
-						<img
-							src="props.data.iconUrl"
-							alt=""
-							className="img-fluid"
-							id="icon"
-						/>
+						<img src={props.data.iconUrl} alt="" id="icon" />
 						<div>
 							<span className="temperature" id="temperature">
 								{Math.round(props.data.temperature)}
