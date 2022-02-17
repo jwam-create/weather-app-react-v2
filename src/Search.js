@@ -29,6 +29,7 @@ export default function Search(props) {
 
 	function handleSubmit(event) {
 		event.preventDefault();
+		search();
 	}
 
 	function handleSearchInput(event) {
