@@ -17,7 +17,7 @@ export default function WeatherTemperature(props) {
 		return (props.celsius * 9) / 5 + 32;
 	}
 
-	if (unit == "celsius") {
+	if (unit === "celsius") {
 		return (
 			<span className="WeatherTemperature">
 				<span className="temperature" id="temperature">
