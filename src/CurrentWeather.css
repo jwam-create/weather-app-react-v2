@@ -40,3 +40,9 @@
 	font-size: 80px;
 	line-height: 1;
 }
+
+canvas {
+	margin-top: 10px;
+	display: block;
+	max-width: 65px;
+}
