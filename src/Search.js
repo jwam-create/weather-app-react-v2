@@ -9,7 +9,6 @@ export default function Search(props) {
 	const [weatherData, setWeatherData] = useState({ ready: false });
 
 	function handleResponse(response) {
-		console.log(response.data.weather[0].icon);
 		setWeatherData({
 			city: response.data.name,
 			temperature: Math.round(response.data.main.temp),
