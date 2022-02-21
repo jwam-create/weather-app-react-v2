@@ -8,12 +8,6 @@ import "./Search.css";
 export default function Search(props) {
 	const [city, setCity] = useState(props.defaultCity);
 	const [weatherData, setWeatherData] = useState({ ready: false });
-	const [forecastData, setForecastData] = useState(null);
-
-	function handleForecastResponse(response) {
-		console.log(response.data);
-		setForecastData({});
-	}
 
 	function handleResponse(response) {
 		setWeatherData({
@@ -25,12 +19,8 @@ export default function Search(props) {
 			icon: response.data.weather[0].icon,
 			date: new Date(response.data.dt * 1000),
 			ready: true,
+			coordinates: response.data.coord,
 		});
-		console.log(response.data);
-		const apiKey = "7a783f7c6af783c014d0c3ff3bc81786";
-		let forecastApiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${response.data.coord.lat}&lon=${response.data.coord.lon}&exclude={part}&appid=${apiKey}`;
-		console.log(forecastApiUrl);
-		axios.get(forecastApiUrl).then(handleForecastResponse);
 	}
 	function search() {
 		const apiKey = "7a783f7c6af783c014d0c3ff3bc81786";
@@ -72,7 +62,7 @@ export default function Search(props) {
 					</div>
 				</form>
 				<CurrentWeather data={weatherData} />
-				<Forecast />
+				<Forecast coordinates={weatherData.coordinates} />
 			</div>
 		);
 	} else {
