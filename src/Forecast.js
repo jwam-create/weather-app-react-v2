@@ -2,21 +2,16 @@ import React, { useState } from "react";
 import axios from "axios";
 
 import "./Forecast.css";
-import WeatherIcon from "./WeatherIcon";
+
+import ForecastDay from "./ForecastDay";
 
 export default function Forecast(props) {
 	const [loaded, setLoaded] = useState(false);
 	const [forecastData, setForecastData] = useState(null);
 
 	function handleResponse(response) {
-		let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-		console.log(response.data.daily[0]);
-		setForecastData({
-			day: days[new Date(response.data.daily[0].dt * 1000).getDay()],
-			icon: response.data.daily[0].weather[0].icon,
-			highTemp: Math.round(response.data.daily[0].temp.max),
-			lowTemp: Math.round(response.data.daily[0].temp.min),
-		});
+		console.log(response.data.daily);
+		setForecastData(response.data.daily);
 		setLoaded(true);
 	}
 	function searchForecast() {}
@@ -25,14 +20,7 @@ export default function Forecast(props) {
 		return (
 			<div className="Forecast row">
 				<div className="col">
-					<ul>
-						<li className="week-day">{forecastData.day}</li>
-						<li>
-							<WeatherIcon code={forecastData.icon} size={36} />
-						</li>
-						<li className="forecast-high">{forecastData.highTemp}°</li>
-						<li className="forecast-low">{forecastData.lowTemp}°</li>
-					</ul>
+					<ForecastDay data={forecastData[0]} />
 				</div>
 			</div>
 		);
