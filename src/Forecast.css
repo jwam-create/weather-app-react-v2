@@ -1,0 +1,16 @@
+.Forecast ul {
+	list-style-type: none;
+	text-align: center;
+}
+.Forecast .week-day {
+	font-weight: 700;
+	margin-bottom: 10px;
+}
+
+.Forecast canvas {
+	margin: 0 auto;
+	margin-bottom: 10px;
+}
+.Forecast .forecast-high {
+	font-weight: 600;
+}
