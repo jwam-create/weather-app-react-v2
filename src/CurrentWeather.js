@@ -34,7 +34,7 @@ export default function CurrentWeather(props) {
 				<div className="col">
 					<div className="temperature-container d-flex justify-content-end">
 						<div className="float-left">
-							<WeatherIcon code={props.data.icon} />
+							<WeatherIcon code={props.data.icon} size={70} />
 						</div>
 
 						<div>
