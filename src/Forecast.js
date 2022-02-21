@@ -11,7 +11,7 @@ export default function Forecast(props) {
 
 	function handleResponse(response) {
 		console.log(response.data.daily);
-		setForecastData(response.data.daily);
+		setForecastData(response.data.daily[0]);
 		setLoaded(true);
 	}
 	function searchForecast() {}
@@ -20,7 +20,7 @@ export default function Forecast(props) {
 		return (
 			<div className="Forecast row">
 				<div className="col">
-					<ForecastDay data={forecastData[0]} />
+					<ForecastDay data={forecastData} />
 				</div>
 			</div>
 		);
