@@ -8,6 +8,7 @@ import "./Search.css";
 export default function Search(props) {
 	const [city, setCity] = useState(props.defaultCity);
 	const [weatherData, setWeatherData] = useState({ ready: false });
+	const [unit, setUnit] = useState("fahrenheit");
 
 	function handleResponse(response) {
 		setWeatherData({
@@ -24,7 +25,7 @@ export default function Search(props) {
 	}
 	function search() {
 		const apiKey = "7a783f7c6af783c014d0c3ff3bc81786";
-		let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+		let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`;
 		axios.get(apiUrl).then(handleResponse);
 	}
 
@@ -61,8 +62,8 @@ export default function Search(props) {
 						</div>
 					</div>
 				</form>
-				<CurrentWeather data={weatherData} />
-				<Forecast coordinates={weatherData.coordinates} />
+				<CurrentWeather data={weatherData} unit={unit} setUnit={setUnit} />
+				<Forecast coordinates={weatherData.coordinates} unit={unit} />
 			</div>
 		);
 	} else {
