@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import WeatherIcon from "./WeatherIcon";
 
 export default function ForecastDay(props) {
@@ -16,7 +16,7 @@ export default function ForecastDay(props) {
 	}
 
 	return (
-		<div>
+		<div className="ForecastDay">
 			<ul>
 				<li className="week-day">{day()}</li>
 				<li>
