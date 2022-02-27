@@ -12,6 +12,7 @@ export default function Forecast(props) {
 		setForecastData(response.data.daily);
 		setLoaded(true);
 	}
+	//useEffect allows us to identify when something has changed (ex new coordinates) and then run a function
 	useEffect(() => {
 		setLoaded(false);
 	}, [props.coordinates]);
@@ -23,7 +24,7 @@ export default function Forecast(props) {
 					if (index < 5) {
 						return (
 							<div className="col" key={index}>
-								<ForecastDay data={dailyForecast} />
+								<ForecastDay data={dailyForecast} unit={props.unit} />
 							</div>
 						);
 					} else {
@@ -37,7 +38,6 @@ export default function Forecast(props) {
 		let lat = props.coordinates.lat;
 		let long = props.coordinates.lon;
 		let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&units=metric&appid=${apiKey}`;
-		console.log(apiUrl);
 		axios.get(apiUrl).then(handleResponse);
 		return null;
 	}

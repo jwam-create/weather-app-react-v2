@@ -1,6 +1,5 @@
 import Search from "./Search";
 
-import Forecast from "./Forecast";
 import Footer from "./Footer";
 
 import "./App.css";
